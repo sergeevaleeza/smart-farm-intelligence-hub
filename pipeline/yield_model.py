@@ -52,3 +52,11 @@ def train_yield_model(db_path="data/weekly_pipeline.db"):
     df['yield_pred'] = df['yield_pred'].round(1)
 
     return df[['field_id', 'yield_pred']], hist_yield
+
+def get_benchmarks(db_path="data/weekly_pipeline.db"):
+    conn = sqlite3.connect(db_path)
+    # Mock 2024 data (replace with real)
+    hist_ndvi = 0.75
+    county_avg = 200  # bu/acre
+    conn.close()
+    return hist_ndvi, county_avg

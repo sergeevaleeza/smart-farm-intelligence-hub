@@ -67,11 +67,27 @@ fig = px.choropleth_mapbox(gdf, geojson=gdf.geometry, locations=gdf.index, color
                            color_continuous_scale="YlGn", title="Yield Forecast")
 st.plotly_chart(fig, use_container_width=True)
 
+# Historical Comparison + Yield Benchmarking
+hist_ndvi, county_avg = get_benchmarks()
+st.metric("vs. 2024 NDVI", f"{latest_ndvi['ndvi_mean'].iloc[-1] - hist_ndvi:+.2f}", delta_color="normal")
+st.metric("vs. County Avg", f"{pred - county_avg:+.1f} bu/acre")
+
 # Alerts
 latest_ndvi = ndvi.sort_values('date').groupby('field_id').tail(1)
 drops = latest_ndvi[latest_ndvi['ndvi_mean'] < 0.6]
 if not drops.empty:
     st.error(f"ALERT: {len(drops)} fields below NDVI 0.6!")
+
+st.subheader("Recommendations")
+if not drops.empty:
+    for _, drop in drops.iterrows():
+        rec = "Scout for pests" if drop['ndvi_mean'] < 0.5 else "Check irrigation"
+        st.warning(f"Field {drop['field_id']}: {rec} (NDVI: {drop['ndvi_mean']:.2f})")
+
+# Weather-based recs
+latest_weather = weather.tail(1)
+if latest_weather['prcp'].iloc[0] < 0.1 and latest_weather['gdd'].iloc[0] > 20:
+    st.info("Hot & dry: Schedule irrigation for all fields")
 
 # Add SMS Alerts
 #if st.button("Send SMS Alert"):
@@ -82,3 +98,16 @@ if not drops.empty:
 #        body=f"NDVI Drop Alert: Field {selected_field} = {field_ndvi['ndvi_mean'].iloc[-1]:.2f}"
 #    )
 #   st.success("SMS Sent!")
+
+if st.button("Generate Weekly Report"):
+    # PDF export (using reportlab)
+    from reportlab.lib.pagesizes import letter
+    from reportlab.pdfgen import canvas
+    c = canvas.Canvas("weekly_report.pdf", pagesize=letter)
+    c.drawString(100, 750, f"Smart Farm Report - {datetime.now().date()}")
+    c.drawString(100, 700, f"F1 Yield: {pred} bu/acre")
+    c.save()
+    st.download_button("Download PDF", data=open("weekly_report.pdf", "rb"), file_name="weekly_report.pdf")
+
+# CSV Export
+st.download_button("Export Data", data=yield_df.to_csv(), file_name="yields.csv")
