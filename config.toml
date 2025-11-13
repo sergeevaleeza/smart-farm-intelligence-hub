@@ -1,0 +1,13 @@
+# config.toml
+[farm]
+name = "Central IL 500-Acre Farm"
+state = "Illinois"
+county = "McLean"
+fields_shp = "data/raw/fields.geojson"
+
+[data_sources.usda]
+api_key = "PLACEHOLDER_USDA_KEY"
+
+[data_sources.noaa]
+station_id = "GHCND:USW00014806"
+token = "PLACEHOLDER_NOAA_TOKEN"
