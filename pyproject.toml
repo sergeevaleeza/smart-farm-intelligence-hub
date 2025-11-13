@@ -1,0 +1,21 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-farm-intelligence-hub"
+version = "1.0.0"
+dependencies = [
+    "streamlit",
+    "pandas",
+    "numpy",
+    "plotly",
+    "scikit-learn",
+    "geopandas",
+    "python-dotenv",
+    "twilio"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
