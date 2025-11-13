@@ -25,6 +25,9 @@ def _ensure_ee_init():
 _ensure_ee_init()
 
 def get_sentinel_ndvi(fields_gdf, days_back=30):
+    if not ee.data._initialized:
+        print("EE not initialized → returning mock NDVI")
+    return _mock_ndvi_data()  # define a simple mock
     """
     Export NDVI zonal stats to Google Drive.
     Returns empty DF — data will be in Drive.
