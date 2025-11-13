@@ -1,4 +1,4 @@
-from pipeline.config import load_config
+from pipeline.config_CORRECT import load_config
 from pipeline.ingest_usda import get_usda_yield
 from pipeline.ingest_noaa import get_noaa_weather
 from pipeline.clean_merge import merge_to_db

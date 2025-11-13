@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 from datetime import datetime, timedelta
-from .config import load_config
+from .config_CORRECT import load_config
 import os
 import json
 import geopandas as gpd  # ← ADD THIS

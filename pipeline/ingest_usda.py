@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 from io import StringIO
-from .config import load_config
+from .config_CORRECT import load_config
 
 def get_usda_yield():
     cfg = load_config()

@@ -25,3 +25,4 @@ def load_config():
     config["data_sources"]["noaa"]["token"] = noaa_token
 
     return config
+    
