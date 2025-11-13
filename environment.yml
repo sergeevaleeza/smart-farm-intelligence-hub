@@ -1,0 +1,14 @@
+name: farm
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pandas
+  - requests
+  - sqlite
+  - pip
+  - pip:
+      - geopandas
+      - earthengine-api
+      - sentinelsat

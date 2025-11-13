@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "fields",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "field_id": "F1", "crop_2025": "Corn", "acres": 50 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -88.995, 40.515 ], [ -88.985, 40.515 ], [ -88.985, 40.505 ], [ -88.995, 40.505 ], [ -88.995, 40.515 ] ] ] } },
+{ "type": "Feature", "properties": { "field_id": "F2", "crop_2025": "Soybeans", "acres": 50 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -88.975, 40.515 ], [ -88.965, 40.515 ], [ -88.965, 40.505 ], [ -88.975, 40.505 ], [ -88.975, 40.515 ] ] ] } }
+]
+}

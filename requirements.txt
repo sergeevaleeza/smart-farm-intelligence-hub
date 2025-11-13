@@ -1,0 +1,15 @@
+pandas
+geopandas
+# sqlite3
+requests
+sentinelsat
+pyyaml
+schedule
+prophet
+scikit-learn
+plotly
+streamlit
+twilio
+# pipeline
+earthengine-api 
+qgis

@@ -1,0 +1,22 @@
+farm:
+  name: "Central IL 500-Acre Farm"
+  state: "Illinois"
+  county: "McLean"
+  fields_shp: "data/raw/fields.geojson"
+  crop_rotation: ["Corn", "Soybeans"]
+
+data_sources:
+  usda:
+    base_url: "https://quickstats.nass.usda.gov/api"
+    api_key: "YOUR_USDA_API_KEY"  # Get free at https://quickstats.nass.usda.gov/api
+  noaa:
+    station_id: "GHCND:USW00014806"  # Bloomington, IL
+  sentinel:
+    username: "YOUR_COPERNICUS_USERNAME"
+    password: "YOUR_COPERNICUS_PASSWORD"
+  johndeere:
+    api_base: "https://api.sandbox.johndeere.com"  # Use sandbox
+    client_id: "YOUR_CLIENT_ID"
+    client_secret: "YOUR_CLIENT_SECRET"
+  soilgrid:
+    bbox: [-89.2, 40.3, -88.8, 40.6]  # McLean County approx

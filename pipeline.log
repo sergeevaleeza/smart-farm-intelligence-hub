@@ -1,0 +1,57 @@
+2025-11-13 00:03:41,851 - INFO - Pipeline started
+2025-11-13 00:03:44,183 - INFO - Pipeline succeeded
+INFO:root:Pipeline started
+ERROR:root:Pipeline failed: name 'QColor' is not defined
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+ERROR:root:Pipeline failed: "['NDVI_mean', 'NDVI_stdDev'] not in index"
+INFO:root:Pipeline started
+ERROR:root:Pipeline failed: table sentinel_ndvi has no column named ndvi_std
+INFO:root:Pipeline started
+ERROR:root:Pipeline failed: table sentinel_ndvi has no column named ndvi_std
+INFO:root:Pipeline started
+ERROR:root:Pipeline failed: no such function: initspatialite
+INFO:root:Pipeline started
+ERROR:root:Pipeline failed: no such function: initspatialite
+INFO:root:Pipeline started
+ERROR:root:Pipeline failed: "['cloud_cover'] not in index"
+INFO:root:Pipeline started
+ERROR:root:Pipeline failed: "['cloud_cover'] not in index"
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
+INFO:root:Pipeline started
+INFO:root:Pipeline + QGIS export succeeded
