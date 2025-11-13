@@ -7,3 +7,4 @@ geopandas
 python-dotenv
 twilio
 earthengine-api
+reportlab
