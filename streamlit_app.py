@@ -72,6 +72,7 @@ if not drops.empty:
     st.error(f"ALERT: {len(drops)} fields below NDVI 0.6!")
 
 # Add SMS Alerts
+'''
 if st.button("Send SMS Alert"):
     client = Client("ACxxx", "your_token")
     client.messages.create(
@@ -80,3 +81,4 @@ if st.button("Send SMS Alert"):
         body=f"NDVI Drop Alert: Field {selected_field} = {field_ndvi['ndvi_mean'].iloc[-1]:.2f}"
     )
     st.success("SMS Sent!")
+'''
