@@ -1,4 +1,3 @@
-# pipeline/ingest_sentinel.py
 import ee
 import os
 import json
@@ -42,7 +41,8 @@ def _init_ee():
 
     return False
 
-_ensure_ee_init()
+# Initialize at import
+_ee_ready = _init_ee()
 
 def get_sentinel_ndvi(fields_gdf, days_back=30):
     if not _ee_ready:
@@ -111,5 +111,5 @@ def get_sentinel_ndvi(fields_gdf, days_back=30):
 
     except Exception as e:
         print(f"EE query failed: {e}")
-        return pd.DataFrame()  # empty  # Data comes from Drive
+        return pd.DataFrame()  # empty
     
