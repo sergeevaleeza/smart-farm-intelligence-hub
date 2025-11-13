@@ -5,7 +5,11 @@ import plotly.express as px
 import plotly.graph_objects as go
 import geopandas as gpd
 from pipeline.yield_model import train_yield_model
+from pipeline import train_yield_model, load_config
 from twilio.rest import Client
+
+config = load_config()
+yield_df, hist = train_yield_model()
 
 st.set_page_config(page_title="Smart Farm", layout="wide")
 st.title("Smart Farm Yield Intelligence Hub")
