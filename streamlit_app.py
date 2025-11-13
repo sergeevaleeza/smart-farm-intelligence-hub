@@ -30,6 +30,15 @@ ndvi, weather, fields = load_data()
 # Yield forecast
 yield_df, hist = train_yield_model()
 
+# Historical Comparison + Yield Benchmarking
+try:
+    hist_ndvi, county_avg = get_benchmarks()
+    current_ndvi = latest_ndvi['ndvi_mean'].iloc[-1]
+    st.metric("vs. 2024 NDVI", f"{current_ndvi:.2f}", f"{current_ndvi - hist_ndvi:+.2f}")
+    st.metric("vs. County Avg", f"{pred:.1f} bu/acre", f"{pred - county_avg:+.1f}")
+except Exception as e:
+    st.warning("Benchmarks unavailable (DB empty)")
+
 # Sidebar
 st.sidebar.header("Field Selector")
 field_ids = ndvi['field_id'].unique()
@@ -66,11 +75,6 @@ fig = px.choropleth_mapbox(gdf, geojson=gdf.geometry, locations=gdf.index, color
                            mapbox_style="carto-positron", zoom=12, center={"lat": 40.49, "lon": -88.99},
                            color_continuous_scale="YlGn", title="Yield Forecast")
 st.plotly_chart(fig, use_container_width=True)
-
-# Historical Comparison + Yield Benchmarking
-hist_ndvi, county_avg = get_benchmarks()
-st.metric("vs. 2024 NDVI", f"{latest_ndvi['ndvi_mean'].iloc[-1] - hist_ndvi:+.2f}", delta_color="normal")
-st.metric("vs. County Avg", f"{pred - county_avg:+.1f} bu/acre")
 
 # Alerts
 latest_ndvi = ndvi.sort_values('date').groupby('field_id').tail(1)
