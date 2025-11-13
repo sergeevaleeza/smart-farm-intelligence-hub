@@ -1,11 +1,10 @@
-# streamlit_app.py
 import streamlit as st
 import sqlite3
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import geopandas as gpd
 from pipeline.yield_model import train_yield_model
-import os
 from twilio.rest import Client
 
 st.set_page_config(page_title="Smart Farm", layout="wide")
