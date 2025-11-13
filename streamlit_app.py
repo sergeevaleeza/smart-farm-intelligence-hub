@@ -4,7 +4,6 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import geopandas as gpd
-from pipeline.yield_model import train_yield_model
 from pipeline import train_yield_model, load_config
 from twilio.rest import Client
 
