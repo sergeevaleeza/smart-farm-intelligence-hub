@@ -13,3 +13,5 @@ twilio
 # pipeline
 earthengine-api 
 qgis
+python-dotenv
+twilio
