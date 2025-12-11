@@ -1,4 +1,4 @@
-# **[Smart Farm Intelligence Hub](https://smart-farm-intelligence-app.streamlit.app/)
+# **[Smart Farm Intelligence Hub](https://smart-farm-intelligence-app.streamlit.app/)**
 
 Predict, monitor, and optimize performance on a 500-acre corn–soybean rotation farm in Central Illinois.  
 This repository contains an end-to-end precision-agriculture data pipeline, geospatial analysis engine, machine-learning forecasting models, and an interactive Streamlit dashboard.
@@ -210,3 +210,4 @@ Open issues or submit a pull request with your improvements.
 This project is released under the MIT License.
 
 ---
+
